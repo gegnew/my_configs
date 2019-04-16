@@ -1,9 +1,11 @@
 set nocompatible              " required
 filetype off                  " required
+syntax on
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 " alternatively, pass a path where Vundle should install plugins
 "[call vundle#begin('~/some/path/here')
 
@@ -25,17 +27,17 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>[
 Plugin 'vim-syntastic/syntastic' "changed to this from line above
 Plugin 'nvie/vim-flake8'
 let python_highlight_all=1
-syntax on
 " Plugin 'jnurmine/Zenburn'
 " Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-"hide .pyc file in NERDtrees
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+" search for anything from vim
 Plugin 'kien/ctrlp.vim'
-"^ search for anything from vim
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-rails.git'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'benmills/vimux'
 "Plugin 'janko-m/vim-test'
@@ -43,6 +45,16 @@ Plugin 'benmills/vimux'
 "Plugin 'julienr/vim-cellmode'
 Plugin 'jgors/vimux-ipy'
 Plugin 'tpope/vim-obsession'
+Plugin 'junegunn/rainbow_parentheses.vim'
+Plugin 'Yggdroot/indentLine'
+Plugin 'prettier/vim-prettier'
+Plugin 'vim-ruby/vim-ruby'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
 "============SETTINGS=================================================
 "vimux-ipy config
 map <Leader>vp :call VimuxIpy()<CR>
@@ -57,8 +69,15 @@ nmap <silent> t<C-s> :TestSuite<CR>   " t Ctrl+s
 nmap <silent> t<C-l> :TestLast<CR>    " t Ctrl+l
 nmap <silent> t<C-g> :TestVisit<CR>   " t Ctrl+g
 
+" remap gcc to CTRL-? for vim-commentary
+map c gc
+xmap cc gc
+
 " make test commands execute using vimux 
 let test#strategy = "vimux"
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
 
 "Vimux config from Johnny P
 "Run the current file with rspec
@@ -146,9 +165,19 @@ EOF
 "turn on line numbering in NERDtree
 set nu
 
+"" NerdTree config
+""hide .pyc file in NERDtrees
+"let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"nnoremap <Leader>f :NERDTreeToggle<Enter>
+"nnoremap <silent> <Leader>v :NERDTreeFind<CR>
+"let NERDTreeToggleQuitOnOpen = 1
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"let NERDTreeAutoDeleteBuffer = 1
+"let NERDTreeMinimalUI = 1
+"let NERDTreeDirArrows = 1
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-
+"" Tab completion for rails
+"set wildmode=list:longest,list:full
+"set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*

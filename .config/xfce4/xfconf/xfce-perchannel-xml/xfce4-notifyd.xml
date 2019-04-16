@@ -4,11 +4,14 @@
   <property name="applications" type="empty">
     <property name="known_applications" type="array">
       <value type="string" value="Dropbox"/>
+      <value type="string" value="Electron"/>
       <value type="string" value="Firefox"/>
       <value type="string" value="Guake"/>
       <value type="string" value="Mailspring"/>
+      <value type="string" value="Skype"/>
       <value type="string" value="Slack"/>
       <value type="string" value="Spotify"/>
+      <value type="string" value="Transmission"/>
       <value type="string" value="xfce4-power-manager"/>
     </property>
   </property>

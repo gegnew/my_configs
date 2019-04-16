@@ -38,10 +38,14 @@ URxvt.keysym.M-u: url-select:select_next
 
 ! Fonts
 
-	!Inconsolata
-URxvt.font: xft:Terminus-10
-URxvt.boldFont: xft:Terminus-10
-URxvt.letterSpace: -5
+!Inconsolata
+!URxvt.font: xft:Terminus-10
+!URxvt.boldFont: xft:Terminus-10
+!URxvt.letterSpace: -5
+
+URxvt.font: xft:DejaVu Sans Mono:size=10
+URxvt.boldFont: xft:DejaVu Sans Mono:size=10
+!URxvt.letterSpace: -5
 
 ! Tango theme
 ! URxvt.background: #1a001a

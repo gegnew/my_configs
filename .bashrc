@@ -154,10 +154,23 @@ xrdb -merge ~/.Xresources
 alias vpn="sudo openvpn /etc/openvpn/dolores-sf-onion.conf"
 alias nl_vpn="sudo openvpn /etc/openvpn/dolores-onion.conf"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+#add etcher-cli to path
+#export PATH=\"$PATH:/opt/etcher-cli\"
 
-#for RVM, for some reason
+# source ruby (I might have fucked up rvm, 4/1/19)
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+# Display the current RVM ruby selection
+#PS1="\$(/usr/local/rvm/bin/rvm-prompt) $PS1"
 
+# RVM bash completion
+[[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# This is for direnv, as per the website. Must be after RVM
+eval "$(direnv hook bash)"
+
+#IF YOU'RE CHANGING THE PATH VARIABLE, DO IT ABOVE RVM, SILLY

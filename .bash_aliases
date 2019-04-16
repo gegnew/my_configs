@@ -2,6 +2,12 @@
 # In not-very-good linux style, this is organized with newest aliases on top, oldest on bottom
 #####
 
+#download script alias
+alias download='bash ~/bin/download.sh'
+
+#work wifi
+alias env='sudo netctl switch-to env'
+
 #source .bashrc
 alias sb='. ~/.bashrc'
 
