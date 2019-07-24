@@ -49,6 +49,8 @@ Plugin 'junegunn/rainbow_parentheses.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'prettier/vim-prettier'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'chrisbra/csv.vim'
+Plugin 'unblevable/quick-scope'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -68,6 +70,12 @@ nmap <silent> t<C-f> :TestFile<CR>    " t Ctrl+f
 nmap <silent> t<C-s> :TestSuite<CR>   " t Ctrl+s
 nmap <silent> t<C-l> :TestLast<CR>    " t Ctrl+l
 nmap <silent> t<C-g> :TestVisit<CR>   " t Ctrl+g
+
+" Set Proper Tabs
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
 
 " remap gcc to CTRL-? for vim-commentary
 map c gc
@@ -111,6 +119,7 @@ inoremap jk <esc>|
 
 "set clipboard
 set clipboard=unnamedplus
+
 
 "set splits
 set splitbelow
@@ -165,19 +174,23 @@ EOF
 "turn on line numbering in NERDtree
 set nu
 
-"" NerdTree config
-""hide .pyc file in NERDtrees
-"let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-"nnoremap <Leader>f :NERDTreeToggle<Enter>
-"nnoremap <silent> <Leader>v :NERDTreeFind<CR>
-"let NERDTreeToggleQuitOnOpen = 1
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-"let NERDTreeAutoDeleteBuffer = 1
-"let NERDTreeMinimalUI = 1
-"let NERDTreeDirArrows = 1
+" NerdTree config
+"hide .pyc file in NERDtrees
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+nnoremap <Leader>f :NERDTreeToggle<Enter>
+nnoremap <silent> <Leader>v :NERDTreeFind<CR>
+let NERDTreeToggleQuitOnOpen = 1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
 "" Tab completion for rails
 "set wildmode=list:longest,list:full
 "set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+
+"set highlight line
+:set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40

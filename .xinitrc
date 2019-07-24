@@ -20,7 +20,7 @@ export GDK_DPI_SCALE=0.5
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
 #fok some wallpaper shiz
-export wallp=$(ls /home/g/Pictures/wallpapers/* | shuf -n 1) 
+export wallp=$(ls /home/g/Pictures/wallpaper/good_ones/* | shuf -n 1) 
 feh --bg-fill $wallp
 #~/.fehbg &
 

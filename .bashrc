@@ -22,6 +22,7 @@ xbindkeys
 #remap bluetooth keyboard LCTL to CAPS
 xkbcomp -i 18 ~/usbkblayout.xkb $DISPLAY
 
+# load xmodmap. For me, this really only does:
 # make caps lock ctrl, shift-caps = caps
 xmodmap ~/.Xmodmap
 
@@ -50,10 +51,6 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -151,11 +148,16 @@ bind '"jk":vi-movement-mode'
 
 xrdb -merge ~/.Xresources
 
-alias vpn="sudo openvpn /etc/openvpn/dolores-sf-onion.conf"
-alias nl_vpn="sudo openvpn /etc/openvpn/dolores-onion.conf"
+# aliases for johnny's vpn
+alias vpn="sudo systemctl start openvpn-client@eliot"
+alias novpn="sudo systemctl stop openvpn-client@eliot"
 
 #add etcher-cli to path
 #export PATH=\"$PATH:/opt/etcher-cli\"
+
+# add yarn to path
+export PATH="$PATH:/opt/yarn-[version]/bin"
+export PATH="$PATH:`yarn global bin`"
 
 # source ruby (I might have fucked up rvm, 4/1/19)
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

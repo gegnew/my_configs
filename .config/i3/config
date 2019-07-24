@@ -125,6 +125,7 @@ bindsym $mod+m workspace $ws10
 # assign workspace/app behavior
 assign [title="Mailspring"] msg
 assign [title="Slack - Soop Shak"] msg
+assign [title="Slack - Primity Bio"] msg
 for_window [class="Spotify"] move to workspace music
 
 #assign workspaces to monitor

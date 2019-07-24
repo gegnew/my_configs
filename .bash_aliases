@@ -2,6 +2,18 @@
 # In not-very-good linux style, this is organized with newest aliases on top, oldest on bottom
 #####
 
+# sudo netctl switch-to is hard to type
+alias net='sudo netctl switch-to'
+alias netl='netctl list'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+#tired of typing "clear"?
+alias c='clear'
+
 #download script alias
 alias download='bash ~/bin/download.sh'
 
@@ -52,7 +64,6 @@ alias soulseek='/opt/Soulseek/SoulseekQt-2016-1-17-64bit'
 #alias for python3 as python and python2 as python2
 alias python='python3'
 
-
 #alias for external monitor at 1920x1080 res
 alias screens='xrandr --output DP-2 --scale 2x2'
 
@@ -60,7 +71,7 @@ alias screens='xrandr --output DP-2 --scale 2x2'
 alias p3='python3'
 
 #alias mount command for windows partition
-alias winmnt='sudo mount -r /dev/nvme0n1p3 /mnt/Windows'
+#alias winmnt='sudo mount -r /dev/nvme0n1p3 /mnt/Windows'
 
 #alias shutdown
 alias die='shutdown -P now'
@@ -72,16 +83,16 @@ alias ranger='ranger --choosedir=$HOME/rangerdir; LASTDIR=`cat $HOME/rangerdir`;
 #new command for latest dev is git clone github/'dev_version'
 alias github='https://github.com'
 
-
 #alias command to ssh to mlabvpn
 alias mlab="ssh -X -Y gegnew@thinker"
-
 
 # automate command to send a file to gegnew@thinker on mlabvpn
 # clearly, I need to figure out a way to set a generic filename for this
 alias mlabsend="scp ppsth2.m gegnew@thinker:/auto/home/gegnew/msgrating" 
 
-
 # commands dtouch and etouch activate or deactivate touchpad
 alias dtouch='xinput set-prop `xinput list | grep -i touchpad | cut -f 2 | grep -oE '[[:digit:]]+'` "Device Enabled" 0'
 alias etouch='xinput set-prop `xinput list | grep -i touchpad | cut -f 2 | grep -oE '[[:digit:]]+'` "Device Enabled" 1'
+
+# alias git log
+alias gl='git log --oneline --all --graph'
