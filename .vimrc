@@ -22,7 +22,7 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ervandew/supertab'
 let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>[
+map <Leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>[
 "Plugin 'scrooloose/syntastic'
 Plugin 'vim-syntastic/syntastic' "changed to this from line above
 Plugin 'nvie/vim-flake8'
@@ -58,6 +58,9 @@ filetype plugin indent on    " required
 
 
 "============SETTINGS=================================================
+"map leader key
+let mapleader = ","
+
 "vimux-ipy config
 map <Leader>vp :call VimuxIpy()<CR>
 vmap <silent> <Leader>e :python run_visual_code()<CR>
@@ -78,8 +81,10 @@ set smarttab
 set expandtab
 
 " remap gcc to CTRL-? for vim-commentary
-map c gc
-xmap cc gc
+ " this doesnt work if you want to use the 'c' binding for delete+insert
+
+map <Leader>cc gcc
+map <Leader>c gc
 
 " make test commands execute using vimux 
 let test#strategy = "vimux"
@@ -194,3 +199,8 @@ let NERDTreeDirArrows = 1
 "set highlight line
 :set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40
+
+" remap save
+map <Leader>s :w<Enter>
+map <Leader>sd :wq<Enter>
+map <Leader>q :q!<Enter>

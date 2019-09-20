@@ -20,7 +20,7 @@ setsid wal -qi $wallp
 xbindkeys
 
 #remap bluetooth keyboard LCTL to CAPS
-xkbcomp -i 18 ~/usbkblayout.xkb $DISPLAY
+# xkbcomp -i 18 ~/usbkblayout.xkb $DISPLAY
 
 # load xmodmap. For me, this really only does:
 # make caps lock ctrl, shift-caps = caps
