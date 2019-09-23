@@ -96,3 +96,6 @@ alias etouch='xinput set-prop `xinput list | grep -i touchpad | cut -f 2 | grep 
 
 # alias git log
 alias gl='git log --oneline --all --graph'
+
+# get the weather
+alias weather='. ~/bin/weather.sh'
