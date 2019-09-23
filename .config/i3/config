@@ -106,8 +106,8 @@ set $ws10 "Chat"
 # assign [class="terminal"]           → $ws1
 # assign [title="Mailspring"] Chat  # this is equivalent to the line below
 assign [title="Mailspring"] $ws10
-assign [title="Slack - Soop Shak"] $ws10
-assign [title="Slack - Primity Bio"] $ws10
+assign [title="Slack - Soop Shak"] Chat
+assign [title="Slack - Primity Bio"] Chat
 for_window [class="Spotify"] move to workspace Music
 
 #assign workspaces to monitor
@@ -124,6 +124,7 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
+#   customizations
 bindsym $mod+n workspace $ws9
 bindsym $mod+m workspace $ws10
 
@@ -136,8 +137,9 @@ bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+#   customizations
+bindsym $mod+Shift+n move container to workspace $ws9
+bindsym $mod+Shift+m move container to workspace $ws10
 
 #=========================================
 
@@ -167,7 +169,7 @@ bindsym $mod+g move absolute position center
 bindsym $mod+Shift+s sticky toggle
 
 # move focused floating window to the current position of the cursor
-bindsym $mod+Shift+m move position mouse
+bindsym $mod+Shift+i move position mouse
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -238,7 +240,7 @@ bar {
     bindsym button5         nop
     position                bottom
     tray_output             primary
-    separator_symbol        ""
+    separator_symbol        "" # ""
     workspace_buttons       yes
     strip_workspace_numbers yes
 
