@@ -134,10 +134,16 @@ xterm*|rxvt*)
     ;;
 esac
 
-#make vim default text editor
-export EDITOR='vim'
-export VISUAL='vim'
+#make neovim default text editor
+export EDITOR='nvim'
+export VISUAL='nvim'
 set -o vi
+
+#alias vim to nvim, unless it isn't installed
+if type nvim > /dev/null 2>&1; then
+    alias vim='nvim'
+fi
+
 
 #set movement mode to vi
 bind '"jk":vi-movement-mode'
