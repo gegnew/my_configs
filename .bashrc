@@ -144,7 +144,6 @@ if type nvim > /dev/null 2>&1; then
     alias vim='nvim'
 fi
 
-
 #set movement mode to vi
 bind '"jk":vi-movement-mode'
 
@@ -182,3 +181,13 @@ export PATH="$PATH:$HOME/.rvm/bin"
 eval "$(direnv hook bash)"
 
 #IF YOU'RE CHANGING THE PATH VARIABLE, DO IT ABOVE RVM, SILLY
+
+# define pyenv environment vars
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+# add `pyenv init` to shell
+# if command -v pyenv 1>/dev/null 2>&1; then eval "$(pyenv init -)" fi
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi
+

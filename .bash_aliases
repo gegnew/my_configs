@@ -99,3 +99,6 @@ alias gl='git log --oneline --all --graph'
 
 # get the weather
 alias weather='. ~/bin/weather.sh'
+
+# edit neovim config
+alias cvim='vim ~/.config/nvim/init.vim'
