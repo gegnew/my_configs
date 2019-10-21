@@ -154,8 +154,8 @@ bind '"jk":vi-movement-mode'
 xrdb -merge ~/.Xresources
 
 # aliases for johnny's vpn
-alias vpn="sudo systemctl start openvpn-client@eliot"
-alias novpn="sudo systemctl stop openvpn-client@eliot"
+alias vpn="sudo systemctl start openvpn-client@eliot.service"
+alias novpn="sudo systemctl stop openvpn-client@eliot.service && . sudo iptables -X"
 
 #add etcher-cli to path
 #export PATH=\"$PATH:/opt/etcher-cli\"
@@ -191,3 +191,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
