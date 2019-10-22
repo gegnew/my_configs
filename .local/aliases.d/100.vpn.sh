@@ -1,0 +1,5 @@
+# aliases for my vpn
+alias vpn="sudo systemctl start openvpn-client@eliot.service"
+alias novpn="sudo systemctl stop openvpn-client@eliot.service && . sudo iptables -X"
+
+#aliases for johnny's vpn
