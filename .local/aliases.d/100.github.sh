@@ -4,3 +4,4 @@ alias github='https://github.com'
 
 # alias git log
 alias gl='git log --oneline --all --graph'
+alias git='hub'
