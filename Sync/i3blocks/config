@@ -1,0 +1,79 @@
+# haven't gotten this to work yet
+# [openvpn]
+# command=/home/g/.config/i3blocks/scripts/openvpn
+# interval=20
+# PID_FILE_FORMAT='/run/openvpn-client/*.pid'
+
+[wlan-dbm]
+command=~/.config/i3blocks/scripts/wlan.sh
+interval=10
+label= 
+color=#CA99E2
+
+# Spotify icon \uF1BC
+[spotify]
+label=
+command=~/.config/i3blocks/scripts/spotify.py
+color=#81b71a
+interval=5
+
+[public-ip]
+
+command=wget -qO - icanhazip.com | awk '{ print "" $1 }'
+label= 
+interval=once
+
+[ip]
+command=hostname -i | awk '{ print "IP:" $1 }'
+interval=once
+color=#91E78B
+
+# check the weather hourly
+[weather]
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+label= 
+interval=3600
+color=#A4C2F4
+
+[disk]
+command=~/.config/i3blocks/scripts/disk.sh
+label= 
+interval=30
+
+[cpu_usage2]
+command=/home/g/.config/i3blocks/scripts/cpu_usage2
+markup=pango
+interval=persist
+
+[cpu_usage]
+command=echo $(mpstat | awk 'NR==4 {print $4}')%
+label=
+interval=5
+
+#[aur-update]
+#command=~/.config/i3blocks/scripts/aur-update.py
+#markup=pango
+#interval=43200
+#UPDATE_COLOR=red
+#QUIET=1
+#IGNORE=root
+
+# haven't test this yet: https://github.com/vivien/i3blocks-contrib/tree/master/usb
+[usb]
+command=~/.config/i3blocks/scripts/usb
+markup=pango
+signal=1
+interval=10
+
+[time]
+command=date "+%H:%M %A"
+interval=1
+
+[battery2]
+command=~/.config/i3blocks/scripts/battery2.py
+markup=pango
+interval=30
+
+[shutdown_menu]
+full_text=
+command=/home/g/.config/i3blocks/scripts/shutdown_menu.sh
